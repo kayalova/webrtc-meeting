@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  redis:
+    image: 'redis:7.0.5'
+    ports:
+      - "6378:6379" #HOST:CONTAINER
+    environment:
+      - REDIS_PASSWORD=${APP_REDIS_PASSWORD}
+    volumes:
+      - "/webrtc-meeting/data/redis:/usr/local/etc/redis"
